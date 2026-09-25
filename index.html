@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7IN GAMES · Estudio indie de videojuegos</title>
+<meta name="description" content="7IN GAMES (se lee «Tin»): estudio indie argentino de videojuegos para Android.">
+<link rel="icon" type="image/png" href="logo/7ingames_rojo_icono512.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="#">
+    <img src="logo/7ingames_rojo_icono512.png" alt="">
+    <span class="display">7IN GAMES</span>
+  </a>
+  <nav>
+    <a href="#juegos">Juegos</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<section class="hero wrap">
+  <div>
+    <p class="kicker display" id="kicker"></p>
+    <h1 class="display" id="titular"></h1>
+    <p class="bajada" id="bajada"></p>
+    <p class="pron" id="pron"></p>
+    <a class="btn" href="#juegos">Ver los juegos ▶</a>
+  </div>
+  <div class="hero-logo">
+    <img src="logo/7ingames_rojo.png" alt="7IN GAMES">
+  </div>
+</section>
+
+<div class="strip"></div>
+
+<main class="wrap">
+  <section class="bloque" id="juegos">
+    <h2 class="titulo display">Juegos</h2>
+    <div class="games" id="juegos-lista"></div>
+  </section>
+
+  <section class="bloque" id="contacto">
+    <h2 class="titulo display">Contacto</h2>
+    <div class="contacto">
+      <p id="contacto-texto"></p>
+      <a class="mail display" id="contacto-mail"></a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span id="pie"></span> · <a href="privacidad.html">Política de privacidad</a></div>
+</footer>
+
+<noscript><p style="text-align:center;padding:20px">Contacto: 7ingames@gmail.com</p></noscript>
+
+<script src="contenido.js"></script>
+<script>
+(function () {
+  var c = window.CONTENIDO;
+  if (!c) { return; }
+
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) { e.className = cls; }
+    if (text) { e.textContent = text; }
+    return e;
+  }
+  function set(id, text) { document.getElementById(id).textContent = text; }
+
+  set("kicker", c.estudio.kicker);
+  set("titular", c.estudio.titular);
+  set("bajada", c.estudio.bajada);
+  set("pron", c.estudio.pronunciacion);
+  set("contacto-texto", c.contacto.texto);
+  set("pie", c.pie);
+
+  var mail = document.getElementById("contacto-mail");
+  mail.textContent = c.contacto.email;
+  mail.href = "mailto:" + c.contacto.email;
+
+  var lista = document.getElementById("juegos-lista");
+  c.juegos.forEach(function (j) {
+    var card = el("article", "card");
+
+    var thumb = el("div", "thumb");
+    if (j.imagen) {
+      var img = el("img");
+      img.src = j.imagen;
+      img.alt = j.nombre;
+      thumb.appendChild(img);
+    } else {
+      thumb.appendChild(el("span", "inicial display", j.nombre.charAt(0)));
+    }
+    card.appendChild(thumb);
+
+    var body = el("div", "card-body");
+    var etiqueta = j.estado === "disponible" ? "Disponible" : "Próximamente";
+    body.appendChild(el("span", "estado display " + j.estado, etiqueta));
+    body.appendChild(el("h3", "display", j.nombre));
+    body.appendChild(el("p", "", j.texto));
+    if (j.enlace) {
+      var a = el("a", "btn chico", j.boton || "Ver más");
+      a.href = j.enlace;
+      a.target = "_blank";
+      a.rel = "noopener";
+      body.appendChild(a);
+    }
+    card.appendChild(body);
+    lista.appendChild(card);
+  });
+})();
+</script>
+
+</body>
+</html>
