@@ -9,9 +9,9 @@
 window.CONTENIDO = {
   estudio: {
     kicker: "Estudio indie · Argentina",
-    titular: "Juegos que se juegan en un ratito y se quedan.",
-    bajada: "Hacemos videojuegos para Android con arte retro y mucha paciencia.",
-    pronunciacion: "El nombre se lee «Tin»: el 7 hace de T."
+    titular: "Nunca dejes de jugar",
+    bajada: " Creamos Videojuegos con alma retro y espíritu indie",
+    pronunciacion: ""
   },
 
   juegos: [
@@ -34,7 +34,7 @@ window.CONTENIDO = {
   ],
 
   contacto: {
-    texto: "¿Consultas, prensa o ideas? Escríbenos.",
+    texto: "¿Consultas, opiniones o ideas? Escríbenos.",
     email: "7ingames@gmail.com"
   },
 
