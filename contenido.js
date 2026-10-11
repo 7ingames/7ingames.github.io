@@ -25,7 +25,7 @@ window.CONTENIDO = {
     },
     {
       nombre: "NIMBO",
-      estado: "Disponible",
+      estado: "disponible",
       texto: "Arena aérea 2D de un solo escenario. En desarrollo.",
       enlace: "https://play.google.com/store/apps/details?id=com.nimbo.game&pcampaignid=web_share",
       boton: "Ver en Google Play",
