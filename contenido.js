@@ -29,7 +29,7 @@ window.CONTENIDO = {
       texto: "Arena aérea 2D de un solo escenario. En desarrollo.",
       enlace: "https://play.google.com/store/apps/details?id=com.nimbo.game&pcampaignid=web_share",
       boton: "Ver en Google Play",
-      imagen: "https://drive.google.com/file/d/1SKNurGxUL3a05pdZ0uPq72KOvV7yi0ph/view?usp=sharing"
+      imagen: "logo/Nimbo_ Aventura sobre islas flotantes.png"
     }
   ],
 
